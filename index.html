@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelance Job Listings</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+  <header class="bg-dark text-white py-3">
+  <div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+  <h1 class="text-center flex-grow-1">Freelance Job Listings</h1>
+  <button id="darkModeToggle" class="btn btn-outline-light"><i class="fas fa-moon"></i></button>
+  </div>
+  <p class="text-center">Connecting Freelancers with Opportunities</p>
+  </div>
+  </header>
+ 
+
+  <div class="container-fluid">
+  <div class="row">
+  <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+  <ul class="nav flex-column">
+  <li class="nav-item">
+  <a class="nav-link active" href="#">
+  <i class="fas fa-home"></i> Dashboard <span class="sr-only">(current)</span>
+  </a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" href="#">
+  <i class="fas fa-file"></i> Job Listings
+  </a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" href="#">
+  <i class="fas fa-users"></i> Freelancers
+  </a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" href="#">
+  <i class="fas fa-chart-bar"></i> Analytics
+  </a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" href="#">
+  <i class="fas fa-cog"></i> Settings
+  </a>
+  </li>
+  </ul>
+  </div>
+  </nav>
+ 
+
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h2>Dashboard</h2>
+  <div class="btn-toolbar mb-2 mb-md-0">
+  <button id="refreshData" class="btn btn-sm btn-outline-secondary">
+  <i class="fas fa-sync-alt"></i> Refresh Data
+  </button>
+  </div>
+  </div>
+ 
+
+  <div class="row">
+  <div class="col-md-4">
+  <div class="card">
+  <div class="card-body">
+  <h5 class="card-title">Total Jobs</h5>
+  <p class="card-text"><span id="totalJobs">Loading...</span></p>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-4">
+  <div class="card">
+  <div class="card-body">
+  <h5 class="card-title">Active Freelancers</h5>
+  <p class="card-text"><span id="activeFreelancers">Loading...</span></p>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-4">
+  <div class="card">
+  <div class="card-body">
+  <h5 class="card-title">New Applications</h5>
+  <p class="card-text"><span id="newApplications">Loading...</span></p>
+  </div>
+  </div>
+  </div>
+  </div>
+ 
+
+  <h2>Job Application Form</h2>
+  <form id="jobApplicationForm">
+  <div class="form-group">
+  <label for="name">Name:</label>
+  <input type="text" class="form-control" id="name" name="name" required>
+  <div class="invalid-feedback">Please enter your name.</div>
+  </div>
+  <div class="form-group">
+  <label for="email">Email:</label>
+  <input type="email" class="form-control" id="email" name="email" required>
+  <div class="invalid-feedback">Please enter a valid email.</div>
+  </div>
+  <div class="form-group">
+  <label for="jobType">Job Type:</label>
+  <select class="form-control" id="jobType" name="jobType">
+  <option value="writing">Writing</option>
+  <option value="design">Design</option>
+  <option value="development">Development</option>
+  <option value="marketing">Marketing</option>
+  </select>
+  </div>
+  <div class="form-group">
+  <label>Skills:</label><br>
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="skill1" value="html">
+  <label class="form-check-label" for="skill1">HTML</label>
+  </div>
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="skill2" value="css">
+  <label class="form-check-label" for="skill2">CSS</label>
+  </div>
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="skill3" value="javascript">
+  <label class="form-check-label" for="skill3">JavaScript</label>
+  </div>
+  </div>
+  <div class="form-group">
+  <label>Experience Level:</label><br>
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="experience" id="exp1" value="beginner">
+  <label class="form-check-label" for="exp1">Beginner</label>
+  </div>
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="experience" id="exp2" value="intermediate">
+  <label class="form-check-label" for="exp2">Intermediate</label>
+  </div>
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="experience" id="exp3" value="expert">
+  <label class="form-check-label" for="exp3">Expert</label>
+  </div>
+  </div>
+  <div class="form-group">
+  <label for="hourlyRate">Hourly Rate:</label>
+  <input type="range" class="form-control-range" id="hourlyRate" name="hourlyRate" min="10" max="100" value="50">
+  <span id="hourlyRateValue">50</span>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="reset" class="btn btn-secondary">Reset</button>
+  </form>
+ 
+
+  <div id="notification" class="alert alert-success mt-3" style="display:none;"></div>
+ 
+
+  <div id="apiDataDisplay" class="mt-4">
+  <h2>User Data from API</h2>
+  <div id="userData">Loading...</div>
+  </div>
+  </main>
+  </div>
+  </div>
+ 
+
+  <footer class="bg-dark text-white py-3 mt-4">
+  <div class="container text-center">
+  &copy; 2024 Freelance Job Listings. All rights reserved.
+  <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+  </div>
+  </footer>
+ 
+
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </body>
+ </html>
