@@ -4,7 +4,7 @@
 This project implements a dynamic website for freelance job listings using JavaScript for front-end functionality. The website incorporates features such as dark mode toggle, form validation, dynamic content loading via API, and local storage to enhance user experience. The core technologies used are HTML, CSS, and JavaScript, focusing on DOM manipulation, asynchronous operations, and event handling.
 
 ## Output
-<iframe src="https://github.com/niat-web/Freelance_Job_Listings_Website" height="1000" width="300" title="Freelance_Job_Listings_Website"></iframe>
+<iframe src="https://niat-web.github.io/Freelance_Job_Listings_Website/" height="1000" width="300" title="Freelance_Job_Listings_Website"></iframe>
 
 ## Project Requirements
 **Technologies:** HTML, CSS, JavaScript, Font Awesome (for icons)
