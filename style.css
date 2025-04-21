@@ -1,0 +1,153 @@
+/* style.css */
+
+:root {
+    --primary-color: #b0e2ff; /* Pastel Blue */
+    --secondary-color: #d3ffce; /* Pastel Green */
+    --accent-color: #ffdead; /* Pastel Yellow */
+    --text-color: #333;
+    --bg-color: #f8f8f8;
+    --dark-bg-color: #333;
+    --dark-text-color: #f8f8f8;
+
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+/* Pastel Background Colors */
+.bg-pastel {
+    background-color: var(--primary-color);
+}
+
+header {
+    background-color: var(--secondary-color);
+}
+/* Header Styling */
+header h1 {
+    color: var(--text-color);
+}
+
+/* Job Listing Section Styling */
+#jobListings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards horizontally */
+}
+
+.card {
+    width: 100%; /* Default width for smaller screens */
+    max-width: 300px; /* Maximum width for larger screens */
+    margin: 15px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.card-text {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #94c1e6;
+    border-color: #94c1e6;
+}
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode #darkModeToggle {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .card {
+        width: calc(50% - 30px); /* Two cards per row on medium screens */
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: calc(33.33% - 30px); /* Three cards per row on large screens */
+    }
+}
+/* Modal Styling */
+.modal-content {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body.dark-mode .modal-content {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+.modal-header {
+    border-bottom: 1px solid #ddd;
+}
+
+body.dark-mode .modal-header {
+    border-bottom: 1px solid #555;
+}
+
+.modal-footer {
+    border-top: 1px solid #ddd;
+}
+
+body.dark-mode .modal-footer {
+    border-top: 1px solid #555;
+}
+/* Notification Styling */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+}
